@@ -14,14 +14,13 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long tagId;
 
-
     @NonNull //@Column(nullable = false)
     private String name;
 
     public Tag() {
     }
 
-    public Tag(final long tagId, @NonNull final String name) {
+    public Tag(long tagId, @NonNull String name) {
         this.tagId = tagId;
         this.name = name;
     }

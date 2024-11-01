@@ -9,14 +9,11 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long userId;
-
     private String name;
-
     private String email;
-
     private String password;
-
     private RoleEnum role;
 
     public User() {

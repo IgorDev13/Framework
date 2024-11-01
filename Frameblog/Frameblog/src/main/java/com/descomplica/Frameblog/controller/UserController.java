@@ -35,6 +35,7 @@ public class UserController {
         return userService.update(id, user);
     }
 
+    @GetMapping(path = "/delete")
     private ResponseEntity<?> delete(@RequestParam final long id){
         userService.delete(id);
         return ResponseEntity.noContent().build();

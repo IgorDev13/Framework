@@ -11,16 +11,14 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long commentId;
-
     private String content;
-
     private Date date;
 
     @ManyToOne
-    private Post postId;
+    private Post post;
 
     @ManyToOne
-    private User userID;
+    private User user;
 
     public Comment() {
     }
@@ -30,8 +28,8 @@ public class Comment {
         this.commentId = commentId;
         this.content = content;
         this.date = date;
-        this.postId = postId;
-        this.userID = userID;
+        this.post = post;
+        this.user = user;
     }
 
     public long getCommentId() {
@@ -58,19 +56,19 @@ public class Comment {
         this.date = date;
     }
 
-    public Post getPostId() {
-        return postId;
+    public Post getPost() {
+        return post;
     }
 
-    public void setPostId(Post postId) {
-        this.postId = postId;
+    public void setPost(Post postId) {
+        this.post = post;
     }
 
-    public User getUserID() {
-        return userID;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserID(User userID) {
-        this.userID = userID;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
