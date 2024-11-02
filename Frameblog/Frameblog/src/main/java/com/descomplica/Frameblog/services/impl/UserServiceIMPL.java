@@ -1,4 +1,4 @@
 package com.descomplica.Frameblog.services.impl;
 
-public class PostSI {
+public class UserServiceIMPL {
 }
