@@ -20,7 +20,7 @@ public class CommentController {
 
     @PostMapping("/save")
     private @ResponseBody Comment save(@RequestBody Comment comment){
-        return commentService.save(comment);
+        return commentService.send(comment);
     }
 
 

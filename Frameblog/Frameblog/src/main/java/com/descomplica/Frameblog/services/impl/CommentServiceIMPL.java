@@ -15,7 +15,6 @@ public class CommentServiceIMPL implements CommentService {
     @Override
     public Comment send(Comment comment){
         comment.setUser(userService.get(comment.getUser().getUserId()));
-
-
+        
     }
 }
