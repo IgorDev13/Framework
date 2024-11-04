@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CommentServiceIMPL implements CommentService {
+public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private UserService userService;
@@ -15,6 +15,6 @@ public class CommentServiceIMPL implements CommentService {
     @Override
     public Comment send(Comment comment){
         comment.setUser(userService.get(comment.getUser().getUserId()));
-        
+
     }
 }

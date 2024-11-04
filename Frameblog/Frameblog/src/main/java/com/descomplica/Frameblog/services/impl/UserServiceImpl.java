@@ -12,7 +12,7 @@ import java.util.Objects;
 
 
 @Service
-public class UserServiceIMPL implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;

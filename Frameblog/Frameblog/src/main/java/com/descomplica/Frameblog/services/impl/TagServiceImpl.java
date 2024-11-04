@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class TagServiceIMPL implements TagService {
+public class TagServiceImpl implements TagService {
 
     @Autowired
     private TagRepository tagRepository;

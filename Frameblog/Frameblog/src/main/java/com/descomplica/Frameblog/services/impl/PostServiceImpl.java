@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class PostServiceIMPL implements PostService {
+public class PostServiceImpl implements PostService {
 
     @Autowired
     private PostRepository postRepository;
