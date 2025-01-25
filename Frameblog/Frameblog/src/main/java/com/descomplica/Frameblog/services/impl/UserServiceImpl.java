@@ -5,6 +5,7 @@ import com.descomplica.Frameblog.repositories.UserRepository;
 import com.descomplica.Frameblog.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public User save (final User user){
 
@@ -26,6 +30,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("Existing USer");
         }
 
+        String passwordHash = passwordEncoder.encode(user.getPassword());
         User entity = new User(user.getUserId(), user.getName(), user.getEmail(), user.getUsername(), user.getPassword(), user.getRole());
         User newUser = userRepository.save(entity);
         return new User(newUser.getUserId(), newUser.getName(), newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());
@@ -51,6 +56,7 @@ public class UserServiceImpl implements UserService {
             userUpdate.setEmail(user.getEmail());
             userUpdate.setUsername(user.getUsername());
             userUpdate.setPassword(user.getPassword());
+            String passwordHash = passwordEncoder.encode(user.getPassword());
             userUpdate.setRole(user.getRole());
             return userRepository.save(userUpdate);
         }

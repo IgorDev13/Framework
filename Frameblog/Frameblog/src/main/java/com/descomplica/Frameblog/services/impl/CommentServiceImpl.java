@@ -16,5 +16,6 @@ public class CommentServiceImpl implements CommentService {
     public Comment send(Comment comment){
         comment.setUser(userService.get(comment.getUser().getUserId()));
 
+        return comment;
     }
 }
